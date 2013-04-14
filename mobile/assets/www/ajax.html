@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    		<script type="text/javascript" charset="utf-8" src="jquery-1.9.js"></script>
+    		<script type="text/javascript" charset="utf-8" src="jquery.mobile-1.3.1.js"></script>
+    		
+</head>
+<body>
+<button>Send an HTTP GET request to a page and get the result back</button>
+
+</body>
+
+<script>
+alert("hi1");
+
+var serializedData = ""
+
+$.get('localhost', serializedData, function(response) {
+    // log the response to the console
+    alert("Response: "+response);
+});
+
+alert("hi");
+</script>
+
+
+</html>
+

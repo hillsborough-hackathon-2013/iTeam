@@ -1,0 +1,15 @@
+# @(#) Local development server settings for REST scripts
+#
+# (C)opyright 2013 iTeamSolutions, llc
+#
+# THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF iTeamSolutions, llc
+# The copyright notice above does not evidence any actual or intended
+# publication of such source code.
+#
+
+BASE_URL="http://localhost:9000"
+URL="${BASE_URL}/population/login"
+
+DEFAULT_CURL_OPTS="-L"
+CURL="curl ${CURL_OPTS:-${DEFAULT_CURL_OPTS}}"
+

@@ -1,0 +1,597 @@
+format 75
+"models" // models
+  revision 3
+  modified_by 69 "svickers"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  classview 128069 "Models Class View"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    classdiagram 128069 "Models Class Diagram"
+      draw_all_relations no hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition yes show_members_visibility yes show_members_stereotype yes show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode class drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      size E
+    end
+
+    class 128069 "GeoLocation"
+      visibility package stereotype "value"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 128197 "GeoLocation"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "latitude" explicit_type "double"
+	  param in name "longitude" explicit_type "double"
+	
+	
+	
+	
+	
+      end
+
+      operation 128325 "toUri"
+	public explicit_return_type "URI"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 129349 // <directional composition>
+	relation 129093 *-->
+	  a role_name "" multiplicity "2" private
+	    classrelation_ref 129349 // <directional composition>
+	  b parent class_ref 128837 // Coordinate
+      end
+
+      classrelation 136645 // longitude (<directional composition>)
+	relation 136389 *-->
+	  a role_name "longitude" private
+	    classrelation_ref 136645 // longitude (<directional composition>)
+	  b parent class_ref 135749 // Longitude
+      end
+
+      classrelation 136773 // latitude (<directional composition>)
+	relation 136517 *-->
+	  a role_name "latitude" private
+	    classrelation_ref 136773 // latitude (<directional composition>)
+	  b parent class_ref 135877 // Latitude
+      end
+    end
+
+    class 128197 "Evacuee"
+      visibility package stereotype "aggregate root"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl "${comment}interface ${name} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      
+      classrelation 128069 // (movement)
+	relation 128069 o--> name "movement"
+	  a role_name "" multiplicity "*" private
+	    classrelation_ref 128069 // (movement)
+	  b parent class_ref 128069 // GeoLocation
+      end
+
+      classrelation 128325 // nearest (<aggregation>)
+	relation 128325 o---
+	  a role_name "nearest" multiplicity "0..1" private
+	    classrelation_ref 128325 // nearest (<aggregation>)
+	  b role_name "evacuees" multiplicity "*" private
+	    classrelation_ref 128453 // evacuees (<aggregation>)
+      end
+
+      classrelation 128965 // routes (<aggregation>)
+	relation 128837 o---
+	  a role_name "routes" multiplicity "*" private
+	    classrelation_ref 128965 // routes (<aggregation>)
+	  b role_name "evacuee" private
+	    classrelation_ref 129093 // evacuee (<aggregation>)
+      end
+
+      attribute 129221 "lastKnownLocation"
+	private type class_ref 128069 // GeoLocation
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129477 "currentRoute"
+	private type class_ref 128709 // EvacuationRoute
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 136005 // <directional aggregation>
+	relation 135749 o-->
+	  a role_name "" private
+	    classrelation_ref 136005 // <directional aggregation>
+	  b parent class_ref 135493 // Subscriber
+      end
+    end
+
+    class 128325 "Shelter"
+      visibility package stereotype "entity"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 128197 // location ()
+	relation 128197 o--> name ""
+	  a role_name "location" private
+	    classrelation_ref 128197 // location ()
+	  b parent class_ref 128069 // GeoLocation
+      end
+
+      classrelation 128453 // evacuees (<aggregation>)
+	relation_ref 128325 // <aggregation>
+      end
+
+      classrelation 128709 // address (<directional composition>)
+	relation 128581 *-->
+	  a role_name "address" private
+	    classrelation_ref 128709 // address (<directional composition>)
+	  b parent class_ref 128453 // PostalAddress
+      end
+
+      attribute 128965 "capacity"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 129477 // type (<directional aggregation>)
+	relation 129221 o-->
+	  a role_name "type" private
+	    classrelation_ref 129477 // type (<directional aggregation>)
+	  b parent class_ref 128965 // ShelterType
+      end
+    end
+
+    class 128453 "PostalAddress"
+      visibility package stereotype "value"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 128325 "street1"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128453 "street2"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128581 "city"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128709 "state"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128837 "zip"
+	private type class_ref 128581 // ZipCode
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 128581 // <directional aggregation>
+	relation 128453 o-->
+	  a role_name "" private
+	    classrelation_ref 128581 // <directional aggregation>
+	  b parent class_ref 128581 // ZipCode
+      end
+    end
+
+    class 128581 "ZipCode"
+      visibility package stereotype "value"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 129093 "value"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 128453 "ZipCode"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "value" explicit_type "string"
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128709 "EvacuationRoute"
+      visibility package stereotype "entity"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129093 // evacuee (<aggregation>)
+	relation_ref 128837 // <aggregation>
+      end
+
+      attribute 129605 "distance"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 136133 // points (<directional composition>)
+	relation 135877 *-->
+	  a role_name "points" multiplicity "1..*" private
+	    classrelation_ref 136133 // points (<directional composition>)
+	  b parent class_ref 135621 // Waypoint
+      end
+
+      operation 142405 "includes"
+	public explicit_return_type "bool"
+	nparams 2
+	  param in name "point" type class_ref 128069 // GeoLocation
+	  param in name "within" explicit_type "int"
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128837 "Coordinate"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 129349 "value"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 134981 "+"
+	public explicit_return_type "double"
+	nparams 1
+	  param in name "other" type class_ref 128837 // Coordinate
+	
+	
+	
+	
+	
+      end
+
+      operation 135109 "-"
+	public explicit_return_type "double"
+	nparams 1
+	  param in name "other" type class_ref 128837 // Coordinate
+	
+	
+	
+	
+	
+      end
+
+      operation 135237 "toRadians"
+	public explicit_return_type "double"
+	nparams 0
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128965 "ShelterType"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      
+    end
+
+    class 135493 "Subscriber"
+      visibility package stereotype "entity"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 141765 "enable"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 141893 "disable"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      classrelation 143301 // credentials (<directional composition>)
+	relation 143045 *-->
+	  a role_name "credentials" private
+	    classrelation_ref 143301 // credentials (<directional composition>)
+	  b parent class_ref 142405 // Credentials
+      end
+
+      operation 142277 "changeCredentials"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "replacement" type class_ref 142405 // Credentials
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 135621 "Waypoint"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 136261 // <directional aggregation>
+	relation 136005 o-->
+	  a role_name "" private
+	    classrelation_ref 136261 // <directional aggregation>
+	  b parent class_ref 128069 // GeoLocation
+      end
+    end
+
+    class 135749 "Longitude"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 136389 // <generalisation>
+	relation 136133 ---|>
+	  a public
+	    classrelation_ref 136389 // <generalisation>
+	  b parent class_ref 128837 // Coordinate
+      end
+    end
+
+    class 135877 "Latitude"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 136517 // <generalisation>
+	relation 136261 ---|>
+	  a public
+	    classrelation_ref 136517 // <generalisation>
+	  b parent class_ref 128837 // Coordinate
+      end
+    end
+
+    class 142405 "Credentials"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 136133 "account"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136261 "password"
+	private explicit_type "SecureHash"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 142149 "Credentials"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "account" explicit_type "string"
+	  param in name "password" explicit_type "SecureHash"
+	
+	
+	
+	
+	
+      end
+
+      operation 142021 "matches"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "provided" type class_ref 142405 // Credentials
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 142533 "Emergency"
+      visibility package stereotype "entity"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 136389 "issuer"
+	private explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 136517 "duration"
+	private explicit_type "Duration"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+    end
+  end
+end
